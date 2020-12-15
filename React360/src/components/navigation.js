@@ -22,7 +22,8 @@ export default class Navigation extends Component {
 
   menu() {
     const links = [
-      { label: 'rotating minecraft cube', id: 'demo-01' },
+	  { label: 'rotating minecraft cube', id: 'demo-01' },
+		{ label: 'aframe rotating minecraft cube', id: 'demo-02' },
     ];
 
     return (

@@ -1,0 +1,38 @@
+import * as THREE from 'three';
+
+export default class Demo {
+  constructor({ scene }) {
+    this.scene = scene;
+
+    this.load();
+  }
+
+ load() {
+	 return (
+		 <html>
+			 <head>
+				 <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+				 <script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script>
+			 </head>
+			 <body>
+				 <a-scene>
+					 <a-camera look-controls wasd-controls position="0 1.6 0"></a-camera>
+					 <a-box
+						 position="1, 1.6, -10"
+						 material="reflectivity: 1; src: ../static/material/coal.jpeg; color: #ffffff"
+						 animation__rotate="property: rotation; to: 0 360 360; dur: 2000; loop: true; autoplay: true; easing: linear"
+					 ></a-box>
+					 <a-sky color="#BFE3DD"></a-sky>
+				 </a-scene>
+			 </body>
+		 </html>
+	 )
+ }
+
+  //Animation
+  update = () => {
+    this.meshes[0].rotation.x += 0.01;
+    this.meshes[0].rotation.y += 0.01;
+  };
+
+}
